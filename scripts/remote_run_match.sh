@@ -31,8 +31,7 @@ fi
 
 synch_mode=`echo $opponent_info | cut -d , -f 2`
 
-team_l_start=/home/robocup/work/src/rctools/helios/src/start-ocl.sh
-#team_l_start=/home/robocup/teams/2018/helios2018-bin/start.sh
+team_l_start=$left_team_start_script
 team_r_start=$opponent_path/start.sh
 
 if [ ! -x $team_l_start ]; then

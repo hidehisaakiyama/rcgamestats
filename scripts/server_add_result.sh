@@ -65,7 +65,7 @@ if [ "$n_lines" -gt "$result_saver_block_size" ]; then
 	elapsed_time=`expr $current_timestamp - $last_timestamp`
 	if [ "$elapsed_time" -ge "$minimum_interval_msec" ]; then
 		path=`dirname $0`
-		python3 $path/write_queued_results.py $queued_results_csv
+		python3 $path/write_queued_results.py $doc_id $key_file $queued_results_csv
 		rm $queued_results_csv
 	fi
 fi

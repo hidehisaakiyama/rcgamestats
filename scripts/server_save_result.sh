@@ -50,7 +50,7 @@ if [ "$elapsed_time" -lt "$minimum_interval_msec" ]; then
 fi
 
 path=`dirname $0`
-python3 $path/write_result.py $sheet_name $match_number $remote_host $csvfile
+python3 $path/write_result.py $doc_id $key_file $sheet_name $match_number $remote_host $csvfile
 
 current_timestamp=`date +%s%3N`
 echo $current_timestamp > $timestamp_file

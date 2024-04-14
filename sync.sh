@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. $HOME/rcgamestats2/config
+. $HOME/rcgamestats/config
 
 if file "$HOME/work/src/rctools/helios/src/player/helios_player" | grep -q "not stripped"; then
     strip $HOME/work/src/rctools/helios/src/player/helios_player
@@ -23,7 +23,7 @@ for host in `cat ${HOME}/sync-hosts`; do
 	rsync -auzv ~/.rcssserver/ $host:.rcssserver/
 	rsync -auzv --delete --exclude "*.h" --exclude "*.cpp" --exclude "*.a" --exclude "*.o" --exclude "*.Po" --exclude "*.lo" --exclude ".deps" --exclude ".git*" --exclude ".libs" --exclude "Makefile*" ~/work/ $host:work/
 	rsync -auzv --delete ~/teams/ $host:teams/
-	rsync -auzv --delete --exclude ".git" ~/rcgamestats2/ $host:rcgamestats2/
+	rsync -auzv --delete --exclude ".git" ~/rcgamestats/ $host:rcgamestats/
 done
 
 echo "sync" > synched

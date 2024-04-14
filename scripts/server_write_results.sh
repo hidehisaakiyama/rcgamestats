@@ -43,7 +43,7 @@ do
 	fi
 
 	path=`dirname $0`
-	python3 $path/write_result2023.py $csvfile
+	python3 $path/write_result.py $csvfile
     done
 
     rm -f HOME/logs/*.csv

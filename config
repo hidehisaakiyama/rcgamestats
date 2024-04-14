@@ -1,8 +1,11 @@
 
 server="sim00"
 #server="localhost"
-#n_hosts=41
-#n_hosts=11
+
+doc_id=""
+key_file=""
+
+left_team_start_script="/home/robocup/work/src/rctools/helios/src/start-ocl.sh"
 
 lockfile="$HOME/lock.rcgamestats"
 saver_lockfile="$HOME/lock.saver-rcgamestats"

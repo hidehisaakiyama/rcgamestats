@@ -5,23 +5,25 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 def main():
 
-    if len(sys.argv) < 4:
-        print("Usage: create-sheet.py <sheet_name> <datetime> <opponent_name> [group_tag]")
+    if len(sys.argv) < 6:
+        print("Usage: create-sheet.py <doc_id> <key_file> <sheet_name> <datetime> <opponent_name> [group_tag]")
         return
 
-    sheet_name=sys.argv[1]
-    datetime=sys.argv[2]
-    opponent_name=sys.argv[3]
-    if len(sys.argv) == 5:
-        group_tag=sys.argv[4]
+    doc_id = sys.argv[1]
+    key_file = os.path.expanduser(sys.argv[2])
+    sheet_name = sys.argv[3]
+    datetime = sys.argv[4]
+    opponent_name = sys.argv[5]
+    if len(sys.argv) == 7:
+        group_tag = sys.argv[6]
     else:
-        group_tag=""
+        group_tag = ""
 
     scope = ['https://spreadsheets.google.com/feeds']
-    doc_id = 'Your doc id'
-    path = os.path.expanduser("Path of json file")
+    #doc_id = 'Your doc id'
+    #path = os.path.expanduser("Path of json file")
 
-    credentials = ServiceAccountCredentials.from_json_keyfile_name(path, scope)
+    credentials = ServiceAccountCredentials.from_json_keyfile_name(key_file, scope)
     client = gspread.authorize(credentials)
     spreadsheet= client.open_by_key(doc_id)
     try:

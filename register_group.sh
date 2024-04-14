@@ -64,8 +64,7 @@ fi
 sheet_name="${group_name}-${opponent_name}"
 
 path=`dirname $0`
-#python3 $path/scripts/create_sheet.py $sheet_name
-python3 $path/scripts/create_sheet.py $sheet_name $datetime $opponent_name $group_tag
+python3 $path/scripts/create_sheet.py $doc_id $key_file $sheet_name $datetime $opponent_name $group_tag
 
 
 for i in `seq 1 $nr_match` ; do
